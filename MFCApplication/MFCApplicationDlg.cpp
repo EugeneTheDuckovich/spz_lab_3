@@ -160,7 +160,7 @@ HANDLE deviceHandle = NULL;
 void CMFCApplicationDlg::OnBnClickedButton1()
 {
 	// Open device
-	deviceHandle = CreateFile(L"\\\\.\\mydevicedriverlink", GENERIC_ALL, 0,
+	deviceHandle = CreateFile(L"\\\\.\\lab3_brigade11_driver_link", GENERIC_ALL, 0,
 		0, OPEN_EXISTING, FILE_ATTRIBUTE_SYSTEM, 0);
 
 	if (deviceHandle == INVALID_HANDLE_VALUE) {
@@ -178,6 +178,6 @@ void CMFCApplicationDlg::OnBnClickedButton2()
 	if (deviceHandle != INVALID_HANDLE_VALUE)
 	{
 		CloseHandle(deviceHandle);
-		MessageBox(L"The device has been successfully closed!", 0, 0);
+		MessageBox(L"The device has been closed!", 0, 0);
 	}
 }
