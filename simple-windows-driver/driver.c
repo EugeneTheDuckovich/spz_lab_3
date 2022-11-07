@@ -72,7 +72,7 @@ NTSTATUS DriverEntry(
 	RTL_OSVERSIONINFOW operationSystemData;
 	RtlGetVersion(&operationSystemData);
 	// Print data about os
-	DbgPrintEx(0, 0, "System version: windows %u %u.%u",
+	DbgPrintEx(0, 0, "System version: windows %u %u.%u  \r\n",
 		(unsigned int)operationSystemData.dwBuildNumber,
 		(unsigned int)operationSystemData.dwMajorVersion,
 		(unsigned int)operationSystemData.dwMinorVersion);

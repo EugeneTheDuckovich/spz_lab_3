@@ -67,6 +67,8 @@ BEGIN_MESSAGE_MAP(CMFCApplicationDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplicationDlg::OnBnClickedButton1)
 	ON_BN_CLICKED(IDC_BUTTON2, &CMFCApplicationDlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDOK, &CMFCApplicationDlg::OnBnClickedOk)
+	ON_BN_CLICKED(IDCANCEL, &CMFCApplicationDlg::OnBnClickedCancel)
 END_MESSAGE_MAP()
 
 
@@ -180,4 +182,14 @@ void CMFCApplicationDlg::OnBnClickedButton2()
 		CloseHandle(deviceHandle);
 		MessageBox(L"The device has been closed!", 0, 0);
 	}
+}
+
+
+void CMFCApplicationDlg::OnBnClickedOk()
+{
+}
+
+
+void CMFCApplicationDlg::OnBnClickedCancel()
+{
 }
