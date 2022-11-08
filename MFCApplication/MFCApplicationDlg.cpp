@@ -180,4 +180,8 @@ void CMFCApplicationDlg::OnBnClickedButton2()
 		CloseHandle(deviceHandle);
 		MessageBox(L"The device has been closed!", 0, 0);
 	}
+	else 
+	{
+		MessageBox(L"Not valid value!", 0, 0);
+	}
 }
