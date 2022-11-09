@@ -5,7 +5,7 @@ UNICODE_STRING SymbolicLinkName = RTL_CONSTANT_STRING(L"\\??\\lab3_brigade11_dri
 
 PDEVICE_OBJECT DeviceObject = NULL;
 
-NTSTATUS DispatchPassThru(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
+NTSTATUS DispatchPassThrough(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
 	PIO_STACK_LOCATION irpsp = IoGetCurrentIrpStackLocation(Irp);
 	NTSTATUS status = STATUS_SUCCESS;
 
@@ -15,9 +15,6 @@ NTSTATUS DispatchPassThru(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
 		break;
 	case IRP_MJ_CLOSE:
 		DbgPrintEx(0, 0, ("closing request was created  \r\n"));
-		break;
-	case IRP_MJ_READ:
-		DbgPrintEx(0, 0, ("reading request was created  \r\n"));
 		break;
 	default:
 		break;
@@ -60,7 +57,7 @@ NTSTATUS DriverEntry(
 	}
 
 	for (int i = 0; i < IRP_MJ_MAXIMUM_FUNCTION; ++i) {
-		driverObject->MajorFunction[i] = DispatchPassThru;
+		driverObject->MajorFunction[i] = DispatchPassThrough;
 	}
 
 	// driverObject->MajorFunction[IRP_MJ_READ] = DispatchCustom;
