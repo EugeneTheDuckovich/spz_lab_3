@@ -175,13 +175,11 @@ void CMFCApplicationDlg::OnBnClickedButton1()
 void CMFCApplicationDlg::OnBnClickedButton2()
 {
 	// Close device
-	if (deviceHandle != INVALID_HANDLE_VALUE)
-	{
-		CloseHandle(deviceHandle);
-		MessageBox(L"The device has been closed!", 0, 0);
-	}
-	else 
-	{
+	if (deviceHandle == INVALID_HANDLE_VALUE) {
 		MessageBox(L"Not valid value!", 0, 0);
+		return;
 	}
+
+	CloseHandle(deviceHandle);
+	MessageBox(L"Not valid value!", 0, 0);
 }
